@@ -99,19 +99,19 @@ For the published security measures, data-handling details and contractual commi
 [Security](https://brainattic.ai/security), the [Privacy Policy](https://brainattic.ai/privacy)
 and the [Data Processing Agreement](https://brainattic.ai/dpa).
 
-## Planned on-premises deployment
+## On-premises deployment
 
-FSS plans to offer an on-premises brainattic solution for organisations that require the
-knowledge base to run on their own infrastructure. This is the intended long-term option
-for customers with the most demanding infrastructure and data-control requirements; it is
-**planned, not currently available**.
+**FSS is ready to offer on-premises brainattic deployment** for organisations that need the
+knowledge base on their own infrastructure, with control over where it runs and how it is
+operated. Each deployment is planned customer by customer: we work with you to agree the
+requirements, scope, integrations and delivery timeline.
 
-The proposed path is to **pilot first, then move on-premises**: validate feasibility and
-practical value with an agreed scope and suitable pilot data, then work with FSS to move to
-an on-premises deployment once available. [Contact us](https://brainattic.ai/support) to
-discuss a pilot and your deployment requirements. AI clients and integrations must also
-meet your data-handling requirements; hosting the knowledge base on-premises alone does not
-control where those services process content.
+A **pilot-first approach** can validate feasibility and practical value before moving to your
+on-premises solution with FSS. [Talk to us](https://brainattic.ai/support) about your needs
+and the right deployment path for your organisation.
+
+AI clients and integrations must also meet your data-handling requirements; hosting the
+knowledge base on-premises alone does not control where those services process content.
 
 ## Requirements
 
