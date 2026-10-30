@@ -46,7 +46,7 @@ Three distinct mechanisms keep that collaboration governed:
 - **Revisions and auditability** make changes traceable, support review, and let you recover
   earlier document versions.
 
-We built brainattic at Finite Software Systems to close exactly that gap in our own work. See
+We built brainattic at Finite Software Systems Ltd to close exactly that gap in our own work. See
 **[One knowledge base, every agent](docs/team-workflow.md)** for a change request followed from
 the customer call through analysis, implementation, testing and shipping, and for how a new
 team member gets up to speed in a single conversation.
@@ -77,16 +77,17 @@ running a tool that changes or deletes data.
 
 ## Data security and hosting
 
-Core customer data is stored and processed on FSS-controlled infrastructure in **Bulgaria,
-European Union**. FSS operates its own infrastructure, colocated in a **Tier 3+ data centre
-in Sofia**. The data-centre operator provides the physical facility and its access controls,
-with no logical access to customer data.
+Core customer data is stored and processed on infrastructure controlled by Finite Software
+Systems Ltd in **Bulgaria, European Union**. Finite Software Systems Ltd operates its own
+infrastructure, colocated in a **Tier 3+ data centre in Sofia**. The data-centre operator
+provides the physical facility and its access controls, with no logical access to customer data.
 
 Customer workspaces have logical tenant isolation, role-based permissions and individual
 user authentication. Access is protected by TLS; MCP connections use OAuth-based
-authentication. FSS uses segmented networks, firewalls, restricted administrative access,
-operational and security logging and monitoring, and regular backups on FSS-controlled EU
-infrastructure. FSS strictly follows its documented ISO 9001 and ISO/IEC 27001 procedures.
+authentication. Finite Software Systems Ltd uses segmented networks, firewalls, restricted
+administrative access, operational and security logging and monitoring, and regular backups
+on EU infrastructure under its control. Finite Software Systems Ltd strictly follows its
+documented ISO 9001 and ISO/IEC 27001 procedures.
 
 brainattic does not independently forward customer documents to third-party AI models.
 Your chosen AI client can receive content you explicitly request through the connector,
@@ -101,14 +102,14 @@ and the [Data Processing Agreement](https://brainattic.ai/dpa).
 
 ## On-premises deployment
 
-**FSS is ready to offer on-premises brainattic deployment** for organisations that need the
-knowledge base on their own infrastructure, with control over where it runs and how it is
-operated. Each deployment is planned customer by customer: we work with you to agree the
-requirements, scope, integrations and delivery timeline.
+**Finite Software Systems Ltd is ready to offer on-premises brainattic deployment** for
+organisations that need the knowledge base on their own infrastructure, with control over
+where it runs and how it is operated. Each deployment is planned customer by customer:
+we work with you to agree the requirements, scope, integrations and delivery timeline.
 
 A **pilot-first approach** can validate feasibility and practical value before moving to your
-on-premises solution with FSS. [Talk to us](https://brainattic.ai/support) about your needs
-and the right deployment path for your organisation.
+on-premises solution with Finite Software Systems Ltd. [Talk to us](https://brainattic.ai/support)
+about your needs and the right deployment path for your organisation.
 
 AI clients and integrations must also meet your data-handling requirements; hosting the
 knowledge base on-premises alone does not control where those services process content.
