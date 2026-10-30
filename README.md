@@ -44,6 +44,18 @@ Your client discovers the current tool list when it connects. Every tool carries
 annotations (`readOnlyHint`, `destructiveHint`, `openWorldHint`), so clients can ask before
 running a tool that changes or deletes data.
 
+## One knowledge base, every agent
+
+brainattic doesn't care which AI agent you use. Sales can work in ChatGPT, analysts in Claude,
+developers in VS Code with GitHub Copilot, operations in Hermes, and each of them reads and
+writes the same documents under the same rules. Every team keeps its own tools and workflow,
+and the knowledge stays in one governed place.
+
+We built brainattic at Finite Software Systems to close exactly that gap in our own work. See
+**[One knowledge base, every agent](docs/team-workflow.md)** for a change request followed from
+the customer call through analysis, implementation, testing and shipping, and for how a new
+team member gets up to speed in a single conversation.
+
 ## Requirements
 
 - A brainattic account and access to a workspace. [Sign up](https://brainattic.ai) if you don't have one.
