@@ -78,9 +78,9 @@ running a tool that changes or deletes data.
 ## Data security and hosting
 
 Core customer data is stored and processed on FSS-controlled infrastructure in **Bulgaria,
-European Union**. FSS operates its own infrastructure, colocated at
-[Telepoint](https://www.telepoint.bg/) in Sofia. Telepoint provides the physical facility and
-its access controls, with no logical access to customer data.
+European Union**. FSS operates its own infrastructure, colocated in a **Tier 3+ data centre
+in Sofia**. The data-centre operator provides the physical facility and its access controls,
+with no logical access to customer data.
 
 Customer workspaces have logical tenant isolation, role-based permissions and individual
 user authentication. Access is protected by TLS; MCP connections use OAuth-based
