@@ -1,9 +1,17 @@
 # brainattic MCP server
 
-**brainattic is the governed knowledge base that agents read and write.** Your team keeps its
-knowledge in versioned documents, and AI clients connect over the
-[Model Context Protocol (MCP)](https://modelcontextprotocol.io) to search, read and update them.
-Workspace rules, roles and revision history decide what an agent may change.
+**The knowledge base your AI reads and writes — under your rules.**
+
+Valuable knowledge gets scattered across private AI conversations, individual assistants and
+disconnected systems. brainattic gives people and AI agents a shared, persistent, governed
+knowledge base: one authoritative set of versioned documents, even when teammates use different
+AI clients. Human-defined permissions control access, rules guide how agents work, and revision
+history makes changes traceable and recoverable.
+
+brainattic is not another AI chatbot, a chat-history archive, or a replacement for SharePoint,
+Git or your existing business systems. It holds the knowledge your team needs across them:
+decisions, procedures, customer context and project history. AI clients connect over the
+[Model Context Protocol (MCP)](https://modelcontextprotocol.io) to search, read and update it.
 
 This repository documents the hosted brainattic MCP server: what it does, how to connect a
 client, and how to use it. It contains no server code. The service is hosted and operated by
@@ -20,6 +28,29 @@ Finite Software Systems Ltd.
 | Connect guide | <https://brainattic.ai/docs/connect> |
 | Support | <https://brainattic.ai/support> · hello@brainattic.ai |
 
+## One knowledge base, every agent
+
+Personal AI memory helps one person in one client. Shared knowledge lets the whole team build
+on a decision, correct it once and carry it into the next task without copying private chats
+or asking everyone to switch assistants.
+
+Sales can work in ChatGPT, analysts in Claude, developers in VS Code with GitHub Copilot, and
+operations in Hermes. Each uses the same versioned knowledge, within their own permissions,
+while keeping their preferred tools and workflow.
+
+Three distinct mechanisms keep that collaboration governed:
+
+- **Permissions** enforce what each user and their connected agent may access or modify.
+- **Rules** are human-authored instructions for how agents should work. They guide behaviour;
+  they are not technically enforced access controls or a substitute for permissions.
+- **Revisions and auditability** make changes traceable, support review, and let you recover
+  earlier document versions.
+
+We built brainattic at Finite Software Systems to close exactly that gap in our own work. See
+**[One knowledge base, every agent](docs/team-workflow.md)** for a change request followed from
+the customer call through analysis, implementation, testing and shipping, and for how a new
+team member gets up to speed in a single conversation.
+
 ## What the server does
 
 When you connect, your agent works inside your brainattic workspace with your own permissions.
@@ -33,8 +64,8 @@ The tools fall into these groups:
   an edit session, apply changes in a batch, then commit or discard them.
 - **Revisions.** Every saved change is a revision. List the history, read any past revision, and
   restore an earlier one.
-- **Rules.** Human-written workspace, project and group rules that the agent reads before it
-  writes, so changes follow your team's conventions.
+- **Rules.** Human-written workspace, project and group instructions that agents should read
+  before writing, to guide changes according to your team's conventions.
 - **Projects and groups.** Organise documents, and archive or restore them.
 - **Attachments.** Attach files and images to documents, and view them.
 - **Skills.** Store reusable agent procedures as versioned skills with supporting files.
@@ -44,17 +75,29 @@ Your client discovers the current tool list when it connects. Every tool carries
 annotations (`readOnlyHint`, `destructiveHint`, `openWorldHint`), so clients can ask before
 running a tool that changes or deletes data.
 
-## One knowledge base, every agent
+## Data security and hosting
 
-brainattic doesn't care which AI agent you use. Sales can work in ChatGPT, analysts in Claude,
-developers in VS Code with GitHub Copilot, operations in Hermes, and each of them reads and
-writes the same documents under the same rules. Every team keeps its own tools and workflow,
-and the knowledge stays in one governed place.
+Core customer data is stored and processed on FSS-controlled infrastructure in **Bulgaria,
+European Union**. FSS operates its own infrastructure, colocated at
+[Telepoint](https://www.telepoint.bg/) in Sofia. Telepoint provides the physical facility and
+its access controls, with no logical access to customer data.
 
-We built brainattic at Finite Software Systems to close exactly that gap in our own work. See
-**[One knowledge base, every agent](docs/team-workflow.md)** for a change request followed from
-the customer call through analysis, implementation, testing and shipping, and for how a new
-team member gets up to speed in a single conversation.
+Customer workspaces have logical tenant isolation, role-based permissions and individual
+user authentication. Access is protected by TLS; MCP connections use OAuth-based
+authentication. FSS uses segmented networks, firewalls, restricted administrative access,
+operational and security logging and monitoring, and regular backups on FSS-controlled EU
+infrastructure. FSS strictly follows its documented ISO 9001 and ISO/IEC 27001 procedures.
+
+brainattic does not independently forward customer documents to third-party AI models.
+Your chosen AI client can receive content you explicitly request through the connector,
+subject to your permissions and that client's own policies. EU hosting does not determine
+where your AI provider processes that content. Optional integrations, such as Slack reminders,
+can also involve transfers outside the EEA; the published policies describe these and other
+limited exceptions.
+
+For the published security measures, data-handling details and contractual commitments, see
+[Security](https://brainattic.ai/security), the [Privacy Policy](https://brainattic.ai/privacy)
+and the [Data Processing Agreement](https://brainattic.ai/dpa).
 
 ## Requirements
 
