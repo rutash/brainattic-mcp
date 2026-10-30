@@ -130,12 +130,102 @@ sign in.
 
 ## Using it
 
-Ask in plain language. For example:
+brainattic works best as a conversation. Your agent proposes, you adjust and approve, and the
+agent carries it out. Everything it writes is saved as a revision you can inspect or roll back.
+The steps below are a good first session.
+
+### 1. Start with the workspace rules
+
+Rules are short, human-written conventions that your agent reads **before it writes**. Examples
+are the language to write in, date formats, naming, status words, and what must never be written
+down (secrets, credentials, personal data). Each workspace comes with a workspace rules document
+from day one, so your first question should be:
+
+> "What rules apply before writing in this workspace? Read them and explain them to me in plain words."
+
+If the rules are filled in, the agent summarises them and explains how it will follow them. If
+they are still empty, it tells you so, which is your cue for step 2.
+
+### 2. Adapt the rules to how you work
+
+Shape the rules in conversation instead of writing them from scratch:
+
+> "Suggest workspace rules for us: language, date format, document naming, status vocabulary and
+> a never-write-down list. Base them on how I work. Draft them for my review and don't save anything yet."
+
+Push back, add, remove and refine until the draft fits. Then say *"Save these as the workspace
+rules."* Workspace rules need an admin role. Editors can set rules for a project or a group, and
+an admin can also edit any rules in the web app under **Admin → Rules**. From the next write on,
+every connected agent reads the approved rules, not just the one you talked to.
+
+### 3. Ask how brainattic fits together
+
+Ask the agent to explain the model using examples from your own work:
+
+> "Explain how workspaces, projects, groups, documents, rules and skills relate in brainattic.
+> Use examples from my own work."
+
+The short version:
+
+| Concept | What it is | Example |
+|---|---|---|
+| **Workspace** | The boundary around your team's knowledge and permissions. Each person has a role in it: Viewer, Editor or Admin. | "Acme Ltd" |
+| **Project** | A document's optional *primary home*. A document belongs to at most one project, and a project can have a hand-written overview ("start here") document. | "Customer onboarding" |
+| **Group** | A cross-cutting label. A document can carry several groups, or none, across projects. Groups are not sub-projects. | "customer-facing", "needs-review" |
+| **Document** | A versioned Markdown page. Every saved change is a revision. | "Onboarding checklist" |
+| **Rules** | Conventions at workspace, project or group scope. Agents read them in that order, and the more specific scope wins a direct conflict. | "Every procedure starts with a one-line purpose" |
+| **Skills** | Reusable step-by-step procedures for agents, which rules can recommend. | "How to file meeting notes" |
+
+### 4. Ask how to put brainattic to use, in the context of your work
+
+Your agent already knows a lot about you: earlier conversations, the projects you've discussed,
+files you've shared, and whatever memory your client keeps. Let it connect that to brainattic:
+
+> "Based on what you know about my work from our conversations, how would I best put brainattic
+> to use? What should live here, what should stay out, and where would it save us the most time?"
+
+A good answer names concrete candidates, such as recurring decisions, procedures people keep
+asking about, customer facts, or project histories. It also explains why each one belongs in a
+shared, governed knowledge base rather than in a single chat.
+
+> **Note:** your agent's memory lives in your AI client, not in brainattic. brainattic sees only what
+> your agent reads or writes through the connector, under your account's permissions.
+
+### 5. Let the agent propose a first project
+
+Ask for a complete proposal before anything is created:
+
+> "Propose a first brainattic project for me: its name and purpose, a project overview, the groups
+> it needs, project rules, and three example documents drafted from things we've already worked on.
+> Show me the whole plan and create nothing until I approve."
+
+A typical proposal looks like this:
+
+```text
+Project:   Customer onboarding. Everything a new customer needs from signing to go-live.
+Overview:  "Start here": scope, owners, where the checklist lives, how to propose changes.
+Groups:    customer-facing · internal-only · needs-review
+Rules:     Title pattern "<Customer> – <topic>". Every procedure starts with a one-line purpose
+           and lists its owner. Dates as YYYY-MM-DD. Never record customer passwords or API keys.
+Examples:  1. Onboarding checklist (customer-facing)
+           2. Kick-off call notes template (internal-only)
+           3. Lessons learned from our last three onboardings (needs-review)
+```
+
+Adjust it ("merge those two groups", "add a group for contracts", "make the rules stricter about
+dates"), then approve. The agent creates the project, groups, overview and rules, and files the
+example documents. Open the web app to see the result, check each document's revision history, and
+ask for any change in plain language.
+
+### 6. Keep the rhythm
+
+From then on, work the same way: **the agent proposes, you adapt and approve, it executes.**
+Everyday requests look like this:
 
 - "Search brainattic for our deployment checklist and summarise the steps, citing the documents."
-- "Read the onboarding guide and add a section on VPN access. Follow the workspace rules."
-- "Show me the revision history of the pricing page and what changed last week."
-- "Restore the previous revision of the release notes."
+- "File these meeting notes in the right project with a clear title and the right groups."
+- "Read the onboarding guide and add a section on VPN access. Follow the rules."
+- "Show me what changed in the pricing page last week, and restore the previous revision."
 - "Remind the team on Friday at 10:00 to review the incident log."
 
 Good habits:
@@ -144,8 +234,8 @@ Good habits:
 - **Review write actions.** Some tools create, change, archive or delete content. Your client will
   usually ask before running them; read the request before approving.
 - **Rely on revisions.** Every save is recorded, so a wrong edit can be inspected and rolled back.
-- **Set rules once.** Write your conventions as workspace or project rules. Agents read them
-  before they write.
+- **Grow the rules as you go.** When you correct the agent twice about the same thing, ask it to
+  propose a rule for it.
 
 ## Troubleshooting
 
